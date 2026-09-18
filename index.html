@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AnnaSetu — a bridge from surplus food to a full plate</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,800&family=Public+Sans:ital,wght@0,400;0,500;0,700;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+  <div class="wrap bar">
+    <button class="brand" data-go="home" aria-label="AnnaSetu home">
+      Anna<span>Setu</span> <small>food bridge</small>
+    </button>
+    <nav id="nav" aria-label="Main">
+      <button data-go="home">Home</button>
+      <button data-go="register">Become a donor</button>
+      <button data-go="donate">Donate food</button>
+      <button data-go="find">Find food</button>
+      <button data-go="track">Track</button>
+      <button data-go="dashboard">Dashboard</button>
+      <button data-go="about">Why AnnaSetu</button>
+      <button data-go="contact">Contact</button>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap">
+
+<!-- ===== 1. HOME ===== -->
+<section id="v-home" class="view on">
+  <div class="hero">
+    <div>
+      <h1>Cooked too much? Someone nearby is still waiting to eat.</h1>
+      <p class="lede">AnnaSetu connects restaurants, canteens, hostels and households with the NGOs and volunteers who can collect surplus food and serve it the same day — before it ever reaches a bin.</p>
+      <div class="cta">
+        <button class="btn" data-go="donate">Donate food</button>
+        <button class="btn ghost" data-go="find">Find food</button>
+      </div>
+      <div class="sdg">
+        <span class="g2">SDG 2 · Zero Hunger</span>
+        <span class="g12">SDG 12 · Responsible Consumption</span>
+      </div>
+    </div>
+    <div class="hero-art">
+      <div class="plate">🍛</div>
+      <q>Your surplus food can be someone's next meal.</q>
+    </div>
+  </div>
+
+  <div class="stats">
+    <div class="stat"><b class="stat-num" id="s-meals">1,200+</b><small>meals shared</small></div>
+    <div class="stat"><b class="stat-num" id="s-donors">350+</b><small>donors on board</small></div>
+    <div class="stat"><b class="stat-num">40+</b><small>NGOs &amp; volunteers</small></div>
+    <div class="stat"><b class="stat-num">10+</b><small>cities covered</small></div>
+  </div>
+
+  <div class="pillars">
+    <div class="pillar"><div class="ico">🥗</div><b>Save food</b><p>Post what's left over in under a minute, with a safe-to-eat window.</p></div>
+    <div class="pillar"><div class="ico">🤝</div><b>Help people</b><p>Verified NGOs request only what they can collect and distribute.</p></div>
+    <div class="pillar"><div class="ico">📍</div><b>Stay local</b><p>Pickups are matched inside the same city, so food travels minutes, not hours.</p></div>
+    <div class="pillar"><div class="ico">🌍</div><b>Cut waste</b><p>Every collected meal is one less contribution to landfill methane.</p></div>
+  </div>
+
+  <div class="panel">
+    <h2>How a plate travels</h2>
+    <p class="lede">Three people, one short chain: a donor posts, an NGO requests, a volunteer collects. Every step is timestamped so both sides know exactly where the food is.</p>
+    <div class="grid2">
+      <div><h3>For donors</h3><p class="meta">Register once with your kitchen address and contact number. After that, posting surplus takes a name, a quantity and a pickup window.</p></div>
+      <div><h3>For NGOs and volunteers</h3><p class="meta">Search live listings by category, city and availability. Request a quantity, get the donor's number, and collect within the stated window.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 2. DONOR REGISTRATION ===== -->
+<section id="v-register" class="view">
+  <h2>Register as a donor</h2>
+  <p class="lede">Join us to share surplus food and make a positive impact. Your details stay with the NGO that collects from you.</p>
+  <div class="panel" style="max-width:760px">
+    <form id="f-register" novalidate>
+      <div class="grid2">
+        <div class="field"><label for="r-name">Full name <i>*</i></label><input id="r-name" placeholder="Ravi Kumar"><div class="err">Enter your name (at least 3 letters).</div></div>
+        <div class="field"><label for="r-type">Donor type <i>*</i></label>
+          <select id="r-type"><option value="">Choose one</option><option>Restaurant</option><option>Canteen / Mess</option><option>Hostel</option><option>Event / Function hall</option><option>Household</option></select>
+          <div class="err">Select the kind of kitchen you run.</div></div>
+        <div class="field"><label for="r-phone">Phone number <i>*</i></label><input id="r-phone" inputmode="numeric" placeholder="9876543210"><div class="err">Enter a valid 10-digit Indian mobile number.</div></div>
+        <div class="field"><label for="r-email">Email <i>*</i></label><input id="r-email" type="email" placeholder="ravi@example.com"><div class="err">Enter a valid email address.</div></div>
+        <div class="field"><label for="r-city">City <i>*</i></label>
+          <select id="r-city"><option value="">Choose a city</option><option>Vijayawada</option><option>Guntur</option><option>Mangalagiri</option><option>Visakhapatnam</option><option>Markapur</option></select>
+          <div class="err">Pick the city you cook in.</div></div>
+        <div class="field"><label for="r-addr">Pickup address <i>*</i></label><input id="r-addr" placeholder="MG Road, Benz Circle"><div class="err">Add a street address volunteers can find.</div></div>
+      </div>
+      <div class="field" style="display:flex; gap:10px; align-items:flex-start">
+        <input type="checkbox" id="r-agree" style="width:auto; margin-top:4px">
+        <label for="r-agree" style="margin:0; font-weight:400">I confirm the food I share will be freshly prepared, safely stored, and described honestly.</label>
+      </div>
+      <div class="err" id="r-agree-err">Please confirm before registering.</div>
+      <button class="btn" type="submit">Register as donor</button>
+    </form>
+  </div>
+  <p class="meta" style="margin-top:14px">Registered donors so far in this session: <b id="donor-count">0</b></p>
+</section>
+
+<!-- ===== 3. DONATE FOOD ===== -->
+<section id="v-donate" class="view">
+  <h2>Donate surplus food</h2>
+  <p class="lede">Fill in the details of the food you want to donate. Be accurate about the consume-before time — it decides whether an NGO can safely collect it.</p>
+  <div class="cols">
+    <div class="panel">
+      <form id="f-donate" novalidate>
+        <div class="grid2">
+          <div class="field"><label for="d-name">Food name <i>*</i></label><input id="d-name" placeholder="Vegetable rice"><div class="err">Name the dish.</div></div>
+          <div class="field"><label for="d-cat">Category <i>*</i></label>
+            <select id="d-cat"><option value="">Choose</option><option>Vegetarian</option><option>Non-vegetarian</option><option>Bakery / Fruit</option><option>Packaged</option></select>
+            <div class="err">Choose a category.</div></div>
+          <div class="field"><label for="d-qty">Quantity (meals) <i>*</i></label><input id="d-qty" type="number" min="1" max="2000" placeholder="30"><div class="err">Enter a number between 1 and 2000.</div></div>
+          <div class="field"><label for="d-city">Pickup city <i>*</i></label>
+            <select id="d-city"><option value="">Choose</option><option>Vijayawada</option><option>Guntur</option><option>Mangalagiri</option><option>Visakhapatnam</option><option>Markapur</option></select>
+            <div class="err">Choose a city.</div></div>
+          <div class="field"><label for="d-prep">Prepared at <i>*</i></label><input id="d-prep" type="datetime-local"><div class="err">When was it cooked?</div></div>
+          <div class="field"><label for="d-before">Consume before <i>*</i></label><input id="d-before" type="datetime-local"><div class="err">Must be later than the prepared time.</div></div>
+        </div>
+        <div class="field"><label for="d-spot">Pickup point <i>*</i></label><input id="d-spot" placeholder="Benz Circle, Vijayawada"><div class="err">Where should volunteers come?</div></div>
+        <div class="field"><label for="d-phone">Contact number <i>*</i></label><input id="d-phone" inputmode="numeric" placeholder="9876543210"><div class="err">Enter a valid 10-digit mobile number.</div></div>
+        <div class="field"><label for="d-note">Anything else?</label><textarea id="d-note" placeholder="Freshly prepared. Kindly collect before 4 PM."></textarea></div>
+        <button class="btn" type="submit">Post this donation</button>
+      </form>
+    </div>
+    <div>
+      <div class="panel" style="margin-bottom:16px">
+        <h3>Before you post</h3>
+        <ul class="tips">
+          <li>Keep cooked food covered and below 5 °C or above 60 °C until pickup.</li>
+          <li>Post a realistic window — most NGOs need 90 minutes to reach you.</li>
+          <li>Count in meals, not vessels, so the NGO can plan distribution.</li>
+          <li>Never list food that has already been served at a table.</li>
+        </ul>
+      </div>
+      <div class="panel">
+        <h3>Your posted donations</h3>
+        <div id="my-donations" class="meta">Nothing posted yet in this session.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 4. FIND FOOD ===== -->
+<section id="v-find" class="view">
+  <h2>Find available food</h2>
+  <p class="lede">Search live listings from donors near you, then request the quantity your team can actually collect today.</p>
+  <div class="filters">
+    <input id="q" placeholder="Search by dish — rice, idly, fruits…" aria-label="Search food">
+    <select id="f-cat" aria-label="Filter by category"><option value="">All categories</option><option>Vegetarian</option><option>Non-vegetarian</option><option>Bakery / Fruit</option><option>Packaged</option></select>
+    <select id="f-city" aria-label="Filter by city"><option value="">All cities</option><option>Vijayawada</option><option>Guntur</option><option>Mangalagiri</option><option>Visakhapatnam</option><option>Markapur</option></select>
+    <select id="f-status" aria-label="Filter by status"><option value="">Any status</option><option>Available</option><option>Requested</option></select>
+  </div>
+  <div id="results" class="list"></div>
+</section>
+
+<!-- ===== 6. TRACK ===== -->
+<section id="v-track" class="view">
+  <h2>Track a donation</h2>
+  <p class="lede">Enter the reference you received when posting or requesting food — for example <b>AS-1001</b> — to see where it has reached.</p>
+  <div class="panel" style="max-width:420px; margin-bottom:20px">
+    <div class="field" style="margin:0">
+      <label for="t-id">Reference number</label>
+      <div style="display:flex; gap:10px">
+        <input id="t-id" placeholder="AS-1001">
+        <button class="btn" id="t-go" type="button">Track</button>
+      </div>
+      <div class="err" id="t-err">No donation found with that reference.</div>
+    </div>
+  </div>
+  <div id="track-out"></div>
+</section>
+
+<!-- ===== 7. DASHBOARD ===== -->
+<section id="v-dashboard" class="view">
+  <h2>Dashboard</h2>
+  <p class="lede">A live view of what has been posted, claimed and served through AnnaSetu in this session.</p>
+  <div class="kpis">
+    <div class="kpi"><b id="k-total" style="color:var(--leaf)">0</b><small>listings posted</small></div>
+    <div class="kpi"><b id="k-avail" style="color:var(--sky)">0</b><small>still available</small></div>
+    <div class="kpi"><b id="k-req" style="color:var(--turmeric)">0</b><small>requested</small></div>
+    <div class="kpi"><b id="k-dist" style="color:var(--clay)">0</b><small>distributed</small></div>
+  </div>
+  <div class="cols">
+    <div class="panel">
+      <h3>Meals by stage</h3>
+      <div class="chart-wrap"><svg id="chart" viewBox="0 0 440 240" role="img" aria-label="Bar chart of meals by stage"></svg></div>
+    </div>
+    <div>
+      <div class="panel" style="margin-bottom:16px">
+        <h3>Total meals shared</h3>
+        <b class="stat-num" id="k-meals" style="font-size:2.6rem">0</b>
+        <p class="meta" style="margin:0">Counted from every listing posted on the platform.</p>
+      </div>
+      <div class="panel">
+        <h3>Estimated beneficiaries</h3>
+        <b class="stat-num" id="k-people" style="font-size:2.6rem; color:var(--sky)">0</b>
+        <p class="meta" style="margin:0">Based on collected and distributed meals reaching one person each.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 8. ABOUT ===== -->
+<section id="v-about" class="view">
+  <h2>Why AnnaSetu exists</h2>
+  <p class="lede">India wastes roughly a third of the food it prepares while millions go to bed hungry. The gap is rarely supply — it is the missing few kilometres and the missing few hours between a full vessel and an empty plate. AnnaSetu is that bridge.</p>
+  <div class="pillars">
+    <div class="pillar"><div class="ico">♻️</div><b>Reduce waste</b><p>Surplus is redirected while it is still safe to eat.</p></div>
+    <div class="pillar"><div class="ico">🍽️</div><b>Feed people</b><p>NGOs get a predictable, same-day source of meals.</p></div>
+    <div class="pillar"><div class="ico">🏘️</div><b>Support communities</b><p>Local donors and local volunteers, matched by city.</p></div>
+    <div class="pillar"><div class="ico">🌱</div><b>Protect the planet</b><p>Less landfill, less methane, less wasted water and fuel.</p></div>
+  </div>
+  <div class="cols">
+    <div class="panel">
+      <h3>Small habits that cut waste</h3>
+      <ul class="tips">
+        <li>Plan meals and portion counts before you cook for a crowd.</li>
+        <li>Store cooked food properly the moment service ends.</li>
+        <li>Share surplus the same day instead of refrigerating it twice.</li>
+        <li>Donate first, discard only as a last resort.</li>
+      </ul>
+    </div>
+    <div class="panel">
+      <h3>Who uses the platform</h3>
+      <p class="meta">Restaurants and cloud kitchens after a slow evening. College messes and hostels during holidays. Function halls after weddings. Households after a festival. On the other side: registered NGOs, shelter homes and volunteer groups who can collect and distribute within hours.</p>
+      <p class="meta" style="margin:0">Small actions add up. Share food, spread hope.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 9. CONTACT ===== -->
+<section id="v-contact" class="view">
+  <h2>Contact us</h2>
+  <p class="lede">Questions, partnership requests or a bug you spotted — we read everything.</p>
+  <div class="cols">
+    <div class="panel">
+      <form id="f-contact" novalidate>
+        <div class="field"><label for="c-name">Name <i>*</i></label><input id="c-name" placeholder="Anita"><div class="err">Tell us your name.</div></div>
+        <div class="field"><label for="c-email">Email <i>*</i></label><input id="c-email" type="email" placeholder="anita@example.com"><div class="err">Enter a valid email address.</div></div>
+        <div class="field"><label for="c-msg">Message <i>*</i></label><textarea id="c-msg" placeholder="Great initiative! Keep going."></textarea><div class="err">Write at least 10 characters.</div></div>
+        <button class="btn" type="submit">Send message</button>
+      </form>
+    </div>
+    <div class="panel">
+      <h3>Get in touch</h3>
+      <div class="contact-line">✉️ hello@annasetu.example.com</div>
+      <div class="contact-line">📞 +91 91234 56789</div>
+      <div class="contact-line">📍 Benz Circle, Vijayawada, Andhra Pradesh</div>
+      <p class="meta" style="margin-top:16px">Volunteer pickups run 9 AM – 9 PM, every day of the week. For urgent surplus after hours, call instead of writing.</p>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- request modal -->
+<div class="modal" id="modal" role="dialog" aria-modal="true" aria-labelledby="m-title">
+  <div class="panel">
+    <h2 id="m-title">Request food</h2>
+    <p class="lede" id="m-sub"></p>
+    <form id="f-request" novalidate>
+      <div class="grid2">
+        <div class="field"><label for="m-name">Your name <i>*</i></label><input id="m-name" placeholder="Suresh"><div class="err">Enter your name.</div></div>
+        <div class="field"><label for="m-org">Organisation <i>*</i></label><input id="m-org" placeholder="Helping Hands NGO"><div class="err">Enter your NGO or group name.</div></div>
+        <div class="field"><label for="m-phone">Phone number <i>*</i></label><input id="m-phone" inputmode="numeric" placeholder="9123456780"><div class="err">Enter a valid 10-digit mobile number.</div></div>
+        <div class="field"><label for="m-qty">Quantity needed <i>*</i></label><input id="m-qty" type="number" min="1" placeholder="30"><div class="err" id="m-qty-err">Enter a quantity within what the donor listed.</div></div>
+      </div>
+      <div class="field"><label for="m-when">Pickup date &amp; time <i>*</i></label><input id="m-when" type="datetime-local"><div class="err">Choose when you will collect.</div></div>
+      <div class="field"><label for="m-purpose">Purpose <i>*</i></label><textarea id="m-purpose" placeholder="Distribution to homeless people in Vijayawada."></textarea><div class="err">Tell the donor where this food will go.</div></div>
+      <div style="display:flex; gap:10px">
+        <button class="btn" type="submit">Submit request</button>
+        <button class="btn ghost" type="button" id="m-cancel">Cancel</button>
+      </div>
+    </form>
+  </div>
+</div>
+
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<footer>
+  <div class="wrap">
+    <q>Good food should feed people, not landfills.</q>
+    <p>AnnaSetu — a student prototype built with HTML, CSS and JavaScript. Share today, support communities, build a healthier tomorrow.</p>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
